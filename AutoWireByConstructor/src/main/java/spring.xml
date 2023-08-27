@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!--<bean id="veh" class="com.jspiders.Spring.AutoWireByConstructor.Vehicles"
+		autowire="constructor">-->
+		 <bean id="veh"
+		class="com.jspiders.Spring.AutoWireByConstructor.Vehicles"
+		autowire="default">
+		<constructor-arg>
+			<ref bean="c1"/>
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="c2"/>
+		</constructor-arg>
+
+
+	</bean>
+
+	<bean id="c1" class="com.jspiders.Spring.AutoWireByConstructor.CarBrand">
+		<property name="brand" value="BMW"></property>
+	</bean>
+	<bean id="c2" class="com.jspiders.Spring.AutoWireByConstructor.CarBrand">
+		<property name="brand" value="Ferrari"></property>
+	</bean>
+
+</beans>
